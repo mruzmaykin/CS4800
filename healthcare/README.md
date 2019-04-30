@@ -1,3 +1,0 @@
-# healthcare
-
-Healthcare Supply Chain
