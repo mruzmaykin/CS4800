@@ -7,3 +7,7 @@ Adding schemas for all types to Loopback ...
 Added schemas for all types to Loopback
 Web server listening at: http://localhost:3000
 Browse your REST API at http://localhost:3000/explorer
+Unhandled error for request POST /api/Order: Error: Error trying invoke business network with transaction id 278c3a06b5310a67dd2eaa5dfaf9086e897a40236a12ee15a7e91ecdec57c706. Error: No valid responses from any peers.
+Response from attempted peer comms was an error: Error: transaction returned with failure: Error: Failed to add object with ID '5044' in collection with ID 'Asset:cpp.Order' as the object already exists
+    at HLFConnection.invokeChainCode (/home/ruzo/.nvm/versions/node/v8.16.0/lib/node_modules/composer-rest-server/node_modules/composer-connector-hlfv1/lib/hlfconnection.js:1117:30)
+    at <anonymous>

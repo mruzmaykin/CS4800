@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+$.ajax({
+  type: 'GET',
+  url: 'http://localhost:3000/api/Order',
+  dataType: 'json',
+  success: function(data){
+    console.log(data);
+  }
+})
+</script>
+
+</body>
+</html>
+
+<!-- var HttpClient = function(){
+  this.get = function(aURL, aCallback){
+    var anHttpRequest = new XMLHttpRequest();
+    anHttpRequest.onreadystatechange = function(){
+      if(anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+        aCallback(anHttpRequest.responseText);
+      }
+      var data = {"$class": "cpp.Order","productID": "string","productName": "string","owner": "string","previousOwner": "string","quantity": 0,"pricePerUnit": 0,"totalPrice": 0};
+      anHttpRequest.open("GET",aURL, true);
+      anHttpRequest.send(data);
+  }
+}
+var apiURL = 'https://blockchain-restful-api.herokuapp.com/api/queries?blockchainID=1';
+var blockchainURL = 'http://localhost:3000/api/Order';
+var sampleURL = 'http://dummy.restapiexample.com/api/v1/employees';
+var client = new HttpClient();
+
+client.get(blockchainURL, function(response){
+  console.log(response);
+}); -->

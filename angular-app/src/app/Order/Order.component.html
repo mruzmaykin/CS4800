@@ -255,19 +255,33 @@
         <thead class="thead">
           <tr class="thead-cols">
             
-                <th class="info">productID</th>
+                <th class="info">
+		<button type="button1" (click)="sortID();">Product ID</button>	
+		</th>
             
-                <th class="info">productName</th>
+                 <th class="info">
+		<button type="button2" (click)="sortName();">Product Name</button>	
+		</th>
+                 
+		<th class="info">
+		<button type="butto3" (click)="sortOwner();">Owner</button>	
+		</th>
             
-                <th class="info">owner</th>
+                 <th class="info">
+		<button type="butto4" (click)="sortPreOwner();">Previous Owner</button>	
+		</th>
             
-                <th class="info">previousOwner</th>
+                 <th class="info">
+		<button type="button5" (click)="sortQuantity();">Quantity</button>	
+		</th>
             
-                <th class="info">quantity</th>
+                 <th class="info">
+		<button type="button6"  (click)="sortUnitPrice();">Unit price</button>	
+		</th>
             
-                <th class="info">pricePerUnit</th>
-            
-                <th class="info">totalPrice</th>
+                 <th class="info">
+		<button type="button7" (click)="sortTotalPrice();">Total price</button>	
+		</th>
             
               <th class="info-actions">Actions</th>
           </tr>

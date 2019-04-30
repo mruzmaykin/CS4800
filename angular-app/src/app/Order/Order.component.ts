@@ -31,7 +31,13 @@ export class OrderComponent implements OnInit {
   private asset;
   private currentId;
   private errorMessage;
-
+  private idbool = true;
+  private namebool= true;
+  private ownerbool= true;
+  private preownerbool= true;
+  private unitbool= true;
+  private quantitybool= true;
+  private totalbool= true;
   productID = new FormControl('', Validators.required);
   productName = new FormControl('', Validators.required);
   owner = new FormControl('', Validators.required);
@@ -65,6 +71,7 @@ export class OrderComponent implements OnInit {
       result.forEach(asset => {
         tempList.push(asset);
       });
+      tempList.sort();
       this.allAssets = tempList;
     })
     .catch((error) => {
@@ -284,6 +291,56 @@ export class OrderComponent implements OnInit {
       'pricePerUnit': null,
       'totalPrice': null
       });
+  }
+
+  sortID():void{
+    if(this.idbool)
+      this.allAssets.sort(function(a,b){return a.productID - b.productID})
+    else
+      this.allAssets.sort(function(a,b){return b.productID - a.productID})
+    this.idbool = !this.idbool;
+  }
+  sortName():void{
+    if(this.namebool)
+      this.allAssets.sort(function(a,b){return (a.productName).localeCompare(b.productName)})
+    else
+      this.allAssets.sort(function(a,b){return (b.productName).localeCompare(a.productName)})
+    this.namebool = !this.namebool;
+  }
+  sortOwner():void{
+    if(this.ownerbool)
+      this.allAssets.sort(function(a,b){return (a.owner).localeCompare(b.owner)})
+    else
+      this.allAssets.sort(function(a,b){return (b.owner).localeCompare(a.owner)})
+    this.ownerbool = !this.ownerbool;
+  }
+  sortPreOwner():void{
+    if(this.preownerbool)
+    this.allAssets.sort(function(a,b){return (a.previousOwner).localeCompare(b.previousOwner)})
+  else
+    this.allAssets.sort(function(a,b){return (b.previousOwner).localeCompare(a.previousOwner)})
+  this.preownerbool = !this.preownerbool;
+  }
+  sortQuantity():void{
+    if(this.quantitybool)
+      this.allAssets.sort(function(a,b){return a.quantity - b.quantity})
+    else
+      this.allAssets.sort(function(a,b){return b.quantity - a.quantity})
+    this.quantitybool = !this.quantitybool;
+  }
+  sortUnitPrice():void{
+    if(this.unitbool)
+      this.allAssets.sort(function(a,b){return a.pricePerUnit - b.pricePerUnit})
+    else
+      this.allAssets.sort(function(a,b){return b.pricePerUnit - a.pricePerUnit})
+    this.unitbool = !this.unitbool;
+  }
+  sortTotalPrice():void{
+    if(this.totalbool)
+    this.allAssets.sort(function(a,b){return a.totalPrice - b.totalPrice})
+  else
+    this.allAssets.sort(function(a,b){return b.totalPrice - a.totalPrice})
+  this.totalbool = !this.totalbool;
   }
 
 }
